@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root{
+--Primary-Color--:#2E66D8;
+--Secondary-Color--:#FF7B00;
+--Font--:"Playfair Display", serif;
+--White--:#fff;
+--Black--:#000;
+--Dark-Overlay--: rgba(0, 0, 0, 0.7);
+}
+body{
+font-family: var(--Font--);
+}
