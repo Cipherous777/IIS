@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIS Portal • Register</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/register.css" />
+    <link rel="stylesheet" href="/CSS/formStyle.css" />
+  </head>
+  <body>
+    <header class="portal-header">
+      <a href="/register.portal" style="text-decoration: none">
+        <div class="logo">
+          <img src="/images/portal-logo.png" alt="IIS Portal Logo" />
+          <h1>IIS Portal</h1>
+        </div>
+      </a>
+      <button class="signup-btn">Sign-up</button>
+    </header>
+
+    <main>
+      <section class="role-selection">
+        <div class="container">
+          <h2 class="form-title">Log-in</h2>
+
+          <div class="form">
+            <form action="">
+              <div id="rows">
+                <!-- LEFT COLUMN -->
+                <div class="column">
+                  <div class="input">
+                    <label>Full name</label>
+                    <input type="text" placeholder="Student's name" />
+                  </div>
+                  <div class="input">
+                    <label>Phone-no</label>
+                    <input type="tel" placeholder="Parent's phone" />
+                  </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="column">
+                  <div class="input">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="Parent's e-mail" />
+                  </div>
+                  <div class="code-input-wrapper" style="margin-top: 0rem">
+                    <div class="input">
+                      <label for="Code">Code</label>
+                    </div>
+
+                    <form class="code-form" id="codeForm" autocomplete="off">
+                      <div class="code-boxes">
+                        <input
+                          type="text"
+                          maxlength="1"
+                          class="code-digit"
+                          required
+                        />
+                        <input
+                          type="text"
+                          maxlength="1"
+                          class="code-digit"
+                          required
+                        />
+                        <input
+                          type="text"
+                          maxlength="1"
+                          class="code-digit"
+                          required
+                        />
+                        <input
+                          type="text"
+                          maxlength="1"
+                          class="code-digit"
+                          required
+                        />
+                        <input
+                          type="text"
+                          maxlength="1"
+                          class="code-digit"
+                          required
+                        />
+                        <input
+                          type="text"
+                          maxlength="1"
+                          class="code-digit"
+                          required
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="button">
+                    <a href="javascript:history.back()" class="btn-prev"
+                      >Previous</a
+                    >
+
+                    <button>Next</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+<style>
+  .code-digit {
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+  }
+  .code-input-wrapper {
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+</style>
+<script>
+  document.querySelectorAll(".code-digit").forEach((input, idx, arr) => {
+    input.addEventListener("input", (e) => {
+      e.target.value = e.target.value.replace(/[^0-9]/g, "");
+      if (e.target.value && idx < arr.length - 1) {
+        arr[idx + 1].focus();
+      }
+    });
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace" && !e.target.value && idx > 0) {
+        arr[idx - 1].focus();
+      }
+    });
+  });
+</script>
