@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+a{
+text-decoration: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -91,13 +95,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero {
-    background: url('/Images/welcome.png') center/cover no-repeat;
+    background: url('/Images/welcome.png')  !important;
+    background-repeat: repeat !important;
+    background-size: cover !important;
     height: 100vh;
 }
 
 .hero-banner {
   position: relative;
-  height: 80vh;
+  height: 100vh;
 
   display: flex;
   align-items: center;

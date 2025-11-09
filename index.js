@@ -15,6 +15,30 @@ app.get("/", (req, res) => {
 app.get("/home", (req, res) => {
   res.redirect("home");
 });
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+app.get("/contact", (req, res) => {
+  res.render("contact");
+});
+app.get("/gallery", (req, res) => {
+  res.render("gallery");
+});
+app.get("/home.kg", (req, res) => {
+  res.render("kg");
+});
+app.get("/home.primary", (req, res) => {
+  res.render("primary");
+});
+app.get("/home.secondary", (req, res) => {
+  res.render("secondary");
+});
+app.get("/news", (req, res) => {
+  res.render("news");
+});
+app.get("/register", (req, res) => {
+  res.render("app");
+});
 app.get("/register.portal", (req, res) => {
   res.render("register");
 });

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | IIS</title>
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/contact.css" />
+  </head>
+  <body>
+    <section class="hero" style="height: 0vh">
+      <div class="container">
+        <!-- LOGO + NAV -->
+        <div class="hero-header">
+          <a href="/">
+            <div class="hero-logo">
+              <img src="/Images/logo2.png" alt="IIS Logo" class="logo-img" />
+              <span class="school-name">Indian International School</span>
+            </div>
+          </a>
+          <nav class="hero-nav">
+            <ul class="nav-menu">
+              <ul class="nav-menu">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="news" class="nav-link">News</a></li>
+                <li><a href="/gallery" class="nav-link">Gallery</a></li>
+                <li><a href="/contact" class="nav-link">Contact</a></li>
+                <li><a href="/register" class="nav-link">Register</a></li>
+              </ul>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT SECTION -->
+    <section class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-grid">
+          <!-- LEFT: FORM -->
+          <div class="contact-form">
+            <p class="contact-intro">
+              Contact us and we will reply as soon as possible....
+            </p>
+
+            <form>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+          </div>
+
+          <!-- RIGHT: INFO -->
+          <div class="contact-info">
+            <div class="info-block">
+              <h3>Visit us</h3>
+              <p>Near Medaniyalem Church, Kehena, Addis Ababa, Ethiopia</p>
+            </div>
+
+            <div class="info-block">
+              <h3>Talk to us</h3>
+              <ul class="phone-list">
+                <li>+251 911 881775</li>
+                <li>+251 905 698437</li>
+                <li>+251 118 591435</li>
+              </ul>
+              <p class="email">info@indianintschool.com</p>
+            </div>
+
+            <div class="info-block">
+              <h3>Platforms we use:</h3>
+              <div class="social-icons">
+                <a href="#" aria-label="Facebook">
+                  <img src="/Images/facebook.svg" alt="Facebook" />
+                </a>
+                <a href="#" aria-label="Telegram">
+                  <img src="/Images/telegram.svg" alt="Telegram" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

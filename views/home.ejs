@@ -14,50 +14,63 @@
     <link rel="stylesheet" href="/CSS/main.css" />
   </head>
   <body>
-    <!-- Header/Navigation -->
-
-    <!-- Hero Section -->
     <section class="hero">
       <header class="header">
         <nav class="navbar">
-          <div class="nav-brand">
-            <img src="/Images/logo.png" alt="IIS Logo" class="logo-img" />
-          </div>
+          <a href="/">
+            <div
+              class="nav-brand"
+              style="display: flex; gap: 7px; align-items: center"
+            >
+              <img src="/Images/logo2.png" alt="IIS Logo" class="logo-img" />
+              <span class="school-name">Indian International School</span>
+            </div>
+          </a>
           <ul class="nav-menu">
-            <li><a href="#" class="nav-link">Home</a></li>
-            <li><a href="#" class="nav-link">About</a></li>
-            <li><a href="#" class="nav-link">News</a></li>
-            <li><a href="#" class="nav-link">Gallery</a></li>
-            <li><a href="#" class="nav-link">Contact</a></li>
-            <li><a href="#" class="nav-link active">Register</a></li>
+            <li><a href="/" class="nav-link active">Home</a></li>
+            <li><a href="/about" class="nav-link">About</a></li>
+            <li><a href="news" class="nav-link">News</a></li>
+            <li><a href="/gallery" class="nav-link">Gallery</a></li>
+            <li><a href="/contact" class="nav-link">Contact</a></li>
+            <li><a href="/register" class="nav-link">Register</a></li>
           </ul>
         </nav>
       </header>
 
       <div class="hero-banner">
         <div class="banner-overlay">
-          <h1 class="hero-title">Center of Intellectual Pursuits.</h1>
+          <h1
+            class="hero-title"
+            style="
+              color: var(--White--);
+              background-color: var(--Primary-Color--);
+              padding: 10px;
+              border-radius: 20px;
+            "
+          >
+            Center of Intellectual Pursuits.
+          </h1>
           <div class="hero-stats">
             <div class="stat">
-              <span class="stat-number">900+</span>
+              <span class="stat-number" data-target="900">0</span>+
               <span class="stat-label">Enrollments</span>
             </div>
             <div class="stat">
-              <span class="stat-number">20+</span>
+              <span class="stat-number" data-target="20">0</span>+
               <span class="stat-label">Qualified Staff</span>
             </div>
             <div class="stat">
-              <span class="stat-number">5+</span>
+              <span class="stat-number" data-target="5">0</span>+
               <span class="stat-label">Clubs</span>
             </div>
             <div class="stat">
-              <span class="stat-number">15</span>
+              <span class="stat-number" data-target="15">0</span>
               <span class="stat-label">Years of Expertise</span>
             </div>
           </div>
           <div class="hero-buttons">
-            <a href="#" class="btn btn-primary">Register</a>
-            <a href="#" class="btn btn-secondary">Learn more</a>
+            <a href="/register" class="btn btn-primary">Register</a>
+            <a href="/about" class="btn btn-secondary">Learn more</a>
           </div>
         </div>
       </div>
@@ -200,21 +213,20 @@
         </div>
       </div>
     </section>
-
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <img src="/Images/logo.png" alt="IIS Logo" class="footer-logo" />
-          <div class="footer-signup">
+          <form class="footer-signup">
             <input
               type="email"
               placeholder="Enter your email"
               class="email-input"
             />
-            <button class="btn btn-primary">Register</button>
-          </div>
+            <button type="submit" class="btn btn-arrow">Submit</button>
+          </form>
         </div>
-        <p class="footer-copy">&copy; 2025 IIS. All Rights Reserved.</p>
+        <p class="footer-copy">Copyright © 2025 IIS. All Rights Reserved.</p>
       </div>
     </footer>
 
@@ -228,6 +240,65 @@
           toggle.textContent = answer.style.display === "block" ? "−" : "+";
         });
       });
+      // Synchronized counting animation — all finish together
+      const counters = document.querySelectorAll(".stat-number");
+      const DURATION = 2500; // Total animation time in ms (2.5 seconds)
+
+      const startAllCounters = () => {
+        const startTime = performance.now();
+
+        const animate = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / DURATION, 1); // 0 to 1
+
+          counters.forEach((counter) => {
+            const target = +counter.getAttribute("data-target");
+            const count = Math.floor(progress * target);
+            counter.innerText = count;
+
+            // Add "+" back only at the end
+            if (
+              progress === 1 &&
+              counter.nextSibling?.textContent.includes("+")
+            ) {
+              counter.innerText = target + "+";
+            } else if (
+              progress < 1 &&
+              counter.nextSibling?.textContent.includes("+")
+            ) {
+              counter.innerText = count;
+            } else {
+              counter.innerText = count;
+            }
+          });
+
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          }
+        };
+
+        requestAnimationFrame(animate);
+      };
+
+      // Trigger when in view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startAllCounters();
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.7 }
+      );
+
+      // Observe the container (not individual counters)
+      const statsSection = document.querySelector(".hero-stats");
+      if (statsSection) {
+        counters.forEach((c) => (c.innerText = "0")); // Reset
+        observer.observe(statsSection);
+      }
     </script>
   </body>
 </html>

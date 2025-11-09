@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIS – Indian International School</title>
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/app.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <section class="hero">
+      <div class="container">
+        <!-- LOGO + NAV -->
+        <div class="hero-header">
+          <a href="/">
+            <div class="hero-logo">
+              <img src="/Images/logo2.png" alt="IIS Logo" class="logo-img" />
+              <span class="school-name">Indian International School</span>
+            </div>
+          </a>
+          <nav class="hero-nav">
+            <ul class="nav-menu">
+              <li><a href="/" class="nav-link active">Home</a></li>
+              <li><a href="/about" class="nav-link">About</a></li>
+              <li><a href="news" class="nav-link">News</a></li>
+              <li><a href="/gallery" class="nav-link">Gallery</a></li>
+              <li><a href="/contact" class="nav-link">Contact</a></li>
+              <li><a href="/register" class="nav-link">Register</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main -->
+    <main class="main">
+      <section class="apps-section">
+        <h1 class="apps-section__title">Apps</h1>
+
+        <div class="app-card">
+          <div class="app-card__icon">
+            <img src="/Images/portal-logo.png" alt="IIS Portal icon" />
+          </div>
+          <div class="app-card__content">
+            <h2 class="app-card__name">IIS Portal</h2>
+            <p class="app-card__desc">
+              Download this application (available in all devices) to register
+              or to make payments.
+            </p>
+            <button class="app-card__btn">Download</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__logo"></div>
+        <form class="footer__form">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="footer__input"
+            required
+          />
+          <button type="submit" class="footer__submit">→</button>
+        </form>
+        <p class="footer__copy">Copyright © 2025 IIS. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+<style>
+  .hero {
+    padding: 1rem 28px 0rem !important;
+    background: var(--White--);
+    text-align: center;
+    height: 10vh !important;
+  }
+</style>
