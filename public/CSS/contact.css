@@ -176,3 +176,14 @@
     padding: 0.9rem;
   }
 }
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

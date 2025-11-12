@@ -1,4 +1,4 @@
-------------------------------------------------- */
+
 .main {
     flex: 1;
     padding-block: 3rem;
@@ -71,4 +71,11 @@
 
 .app-card__btn:hover {
     background: #1565c0;
+}
+.footer-signup{
+    padding: 20px;
+}
+.footer-logo {
+    height: 115px;
+    padding: 20px;
 }

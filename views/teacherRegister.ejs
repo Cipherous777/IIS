@@ -36,41 +36,52 @@
           <p class="form-subtitle">Fill these forms carefully.</p>
 
           <div class="form">
-            <form action="/register.portal/formCompleted" method="GET">
-              <div id="rows" style="margin-top: 0">
-                <!-- LEFT COLUMN -->
+            <form
+              action="/register.portal/submit-codefill"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <div id="rows">
                 <div class="column">
                   <div class="input">
                     <label>Full name</label>
-                    <input type="text" placeholder="Student's name" />
+                    <input
+                      type="text"
+                      name="fullName"
+                      placeholder="Student's name"
+                      required
+                    />
                   </div>
                   <div class="input">
                     <label>Phone-no</label>
-                    <input type="tel" placeholder="Parent's phone" />
-                  </div>
-                  <div class="input">
-                    <label>Upload your resume / CV</label>
-                    <input type="file" />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Parent's phone"
+                      required
+                    />
                   </div>
                 </div>
 
-                <!-- RIGHT COLUMN -->
                 <div class="column">
                   <div class="input">
                     <label>E-mail</label>
-                    <input type="email" placeholder="Parent's e-mail" />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Parent's e-mail"
+                      required
+                    />
                   </div>
                   <div class="input">
-                    <textarea name="" id="">
-Write a precise cover letter</textarea
-                    >
+                    <label>Upload files</label>
+                    <input type="file" name="file" />
                   </div>
-
                   <div class="button">
-                    <a href="javascript:history.back()" class="btn-prev">
-                      Previous</a
+                    <a href="javascript:history.back()" class="btn-prev"
+                      >Previous</a
                     >
-                    <button>Next</button>
+                    <button type="submit">Next</button>
                   </div>
                 </div>
               </div>
