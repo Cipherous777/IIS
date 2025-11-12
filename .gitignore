@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnpm-debug.log
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Build & Cache
+dist/
+build/
+.cache/
+*.tmp
+*.temp
+
+# Render-specific
+.render/

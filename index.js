@@ -5,8 +5,8 @@ const multer = require("multer");
 const mongoose = require("mongoose");
 const { GridFSBucket } = require("mongodb");
 const { Readable } = require("stream");
-
-const PORT = 7937;
+require("dotenv").config();
+const PORT = process.env.PORT || 7937;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -14,8 +14,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use("/register.portal", express.static(path.join(__dirname, "public")));
 
-const MONGO_URL =
-  "mongodb+srv://elanmpr:lifecipher@cluster0.ws20eb2.mongodb.net/IIS?appName=Cluster0";
+const MONGO_URL = process.env.MONGO_URL;
 
 let bucket;
 
